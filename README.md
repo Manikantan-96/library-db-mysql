@@ -23,27 +23,27 @@ This project simulates a simple library database using MySQL. It manages members
 • 	: Transaction-safe borrowing with stock check
 
 ## 🚀 Setup Instructions
-1. 	Clone the repo:
-      git clone (https://github.com/Manikantan-96/library-db-mysql)
-     cd library-db
-2. 	Import the schema and data:
-       source schema.sql;
-      source data for table.sql;
-3. 	Run queries from  or test procedures from .
+### Clone the repo
+git clone https://github.com/Manikantan-96/library-db-mysql
+cd library-db-mysql
 
-### 📈 Sample Query 
-  Members who borrowed and haven’t returned books
-  SELECT m.member_name, bk.title, bo.borrow_date
-  FROM members m
-  JOIN borrow bo ON m.member_id = bo.member_id
-  JOIN books bk ON bo.book_id = bk.book_id
-  WHERE bo.return_date IS NULL;
+### Import schema and data in MySQL
+source schema.sql;
+source data.sql;
+You can run queries from  and test procedures from .
+
+## 📈 Sample Query
+ Members who borrowed and haven’t returned books
+SELECT m.member_name, bk.title, bo.borrow_date
+FROM members m
+JOIN borrow bo ON m.member_id = bo.member_id
+JOIN books bk ON bo.book_id = bk.book_id
+WHERE bo.return_date IS NULL;
+
 ## 🛣️ Future Enhancements
 • 	Add fine calculation for late returns
 • 	Include book reviews and ratings
 • 	Build a web interface for librarians
 
-###📄 License
-
+### 📄 License
 This project is licensed under the MIT License.
-
